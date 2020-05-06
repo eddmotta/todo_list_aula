@@ -7,7 +7,7 @@ import 'package:todomobx/widgets/custom_icon_button.dart';
 import 'package:todomobx/widgets/custom_text_field.dart';
 
 import 'list_screen.dart';
-
+//teste
 class LoginScreen extends StatefulWidget {
 
   @override
@@ -56,12 +56,28 @@ class _LoginScreenState extends State<LoginScreen> {
                   children: <Widget>[
                     Observer(
                       builder: (_){
-                        return CustomTextField(
-                          hint: 'E-mail',
-                          prefix: Icon(Icons.account_circle),
-                          textInputType: TextInputType.emailAddress,
-                          onChanged: loginStore.setEmail,
-                          enabled: !loginStore.loading,
+                        return Row(
+                          children: <Widget>[
+                            Expanded(
+                              child: CustomTextField(
+                                hint: 'Prefixo',
+                                prefix: null,
+                                textInputType: TextInputType.emailAddress,
+                                onChanged: loginStore.setEmail,
+                                enabled: !loginStore.loading,
+                              ),
+                            ),
+                            SizedBox(width: 10,),
+                            Expanded(
+                              child: CustomTextField(
+                                hint: 'Matricula',
+                                prefix: null,
+                                textInputType: TextInputType.emailAddress,
+                                onChanged: loginStore.setEmail,
+                                enabled: !loginStore.loading,
+                              ),
+                            ),
+                          ],
                         );
                       },
                     ),
